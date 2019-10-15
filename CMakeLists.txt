@@ -88,7 +88,13 @@ set(CMAKE_FIND_PACKAGE_SORT_ORDER NATURAL)
 set(CMAKE_FIND_PACKAGE_SORT_DIRECTION DEC)
 
 # Clang 3.8+ installs its own CMake package.  Try it first.
-find_package(Clang QUIET)
+find_package(Clang)
+
+message(${LLVM_CONSIDERED_CONFIGS})
+message(${LLVM_CONSIDERED_VERSIONS})
+
+message(${Clang_CONSIDERED_CONFIGS})
+message(${Clang_CONSIDERED_VERSIONS})
 
 # If Clang did not find LLVM for us, give our search below a hint.
 hint_llvm_from_clang()
